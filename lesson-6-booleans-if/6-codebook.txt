@@ -1,0 +1,103 @@
+Boolean
+  Another type of value that only exists in two forms: True or False.
+
+Syntax Rules for Booleans:
+  To create booleans, simply type
+    true
+    false
+  Do not surround them with quotes like 'true' because then that makes it a string, not a boolean. 
+
+  To generate booleans, the easiest way is to perform comparison operators between values.
+
+Comparison Operators:
+  >: Greater than
+  <: Less than
+  >=: Greater than or equal To
+  <=: Less than or equal to
+  ===: equal to
+    You almost always use this over '=='
+  !==: not equal to
+
+  ==: attempt to convert two values into the same type, then check for equal. 
+    example: console.log(5 == '5') will return true because double equal converts string '5' into number 5. 
+  !=: conversion and not equal to. 
+
+  Comparison operators are lower than all math priority in the order of operations. 
+
+Logical Operators:
+  &&: and 
+    It checks for if two booleans values are both true. 
+    example: console.log(true && true); will return true because both booleans meet the true criteria.
+  ||: or
+    It checks for at least one boolean value return true in a condition. 
+    example: console.log(true||false); will return true because the left side returns true. 
+  ![boolean]: not
+    It flips the boolean condition.
+    example: console.log(!true); will return false. 
+  Logical operators are lower than comparison operators in the order of operations.
+    
+If-Statements
+  To create an if statement:
+    if (boolean condition) {code}
+  You can also create an else statement to run an alternate code.
+    if (boolean condition) {code}
+    else {code}
+  Example: 
+    if (15 >= 16) {
+      console.log('You can drive');
+    } else {
+      console.log('You cannot drive');
+    }
+  Codes in the If/Else parts are considered branches (like narrative branch in Telltale Games)
+
+  You don't need the curly bracket '{}' if there is only one line of code to run. 
+
+  Variable creation inside codes for If-Statements are limited within the branch it exists in. This is called a "Scope" of the variable.
+  Example:
+    if (...){
+      const ABC = 'xyz';
+    } else {
+      const ABC ='ghi';
+    }
+  In this example, the variable ABC will only be accessible and manipulatable within the first If-branch code. This code will return errors. 
+
+Multibranch If-Statements
+  You can create multiple branches for the If-Statements using else if.
+    if (b-condition){code}
+    else if (b-condition){code}
+    else {code}
+  Here, the first if results in else if, which runs another boolean check, which if true runs the 2nd line before running the 3rd line.
+
+Truthy and Falsy values
+  Booleans are not the only values acceptable within If-statements. You can also assign any types of values that are either "truthy" or "falsy".
+  The following values are falsy:
+    false  0   ''   NaN   undefined   null
+  Anything not on this list is truthy
+  You use these to shortcuts for comparison with 0.
+
+Shortcuts for Booleans and If-Statements
+  Ternary Operators: ?: 
+    A shortcut for If-Else statements that can be used in a compact manner as a variable.
+    Example: const result = true ? 'truthy' : 'falsy';
+      Variable runs left or right value depending on boolean condition stated. 
+  Guard Operator: &&
+    A shortcut for If statements and AND logical operator to short circuit an evaluation in case where conditions are immediately falsy before running the full sequence. Think of this as: if values on left false, then value on the right doesn't register. 
+    Example: const message = false && 'hello'
+      Since the value on the left is immediately false, there is no need to check to ensure this 'and' logical operator is satisfactory on the right side. 
+    Example: const message = 5 && 'hello'
+      Both values are true so variable message = 'hello'
+  Default Operator: ||
+    Another short circuit for If statements and the OR logical operator in case where conditions are immediately truthy. Think of this as: if values on left is null, then pick value on right. 
+    Example: const currency = 'EUR' || 'USD'
+      If Euro is picked then currency = EUR. If not, then it defaults to 'USD'. 
+
+Algorithms: Strategy breakdown for writing JScript.
+  When writing JavaScript to create an interaction:
+  1. Think about what needs to happen in sequence.
+  2. Convert the steps into codes.
+  All the steps involved in the interaction to solve a problem is considered an algorithm. 
+  Example: When selecting in Rock Paper Scissors
+    1. The CPU picks a random move.
+    2. Compare the player's chosen move and the CPU's move.
+    3. Display the result in a pop-up.
+  The total steps above are the algorithm of RPS. 

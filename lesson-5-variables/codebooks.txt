@@ -1,0 +1,48 @@
+Variable is a container to assign a category to values and use them later. Values can be both numbers and strings. 
+
+Three ways of creating variables:
+  let [x] = a;
+    Creates a variable with the name 'x'. Values assigned to it can be changed later with reassignments.
+      example: let cartQuantity = 3;
+
+  const [x] = a;
+    Create a constant variable with the name 'x'. Values assigned to be it cannot changed later with reassignments.  
+    >> Best practice to always start with const [x] becaues it is safer and cannot be changed. 
+      example: const cartQuantity = 3;
+
+  var [x] = a;
+    Same as let [x] = a;
+
+Reassigning variables:
+  [x] = a;
+    Where [x] is the variable name and a is the new value. 
+
+Shortcuts for reassignments of variables:
+  [x] += a 
+  [x] -= a
+  [x] *= a
+  [x] /= a
+They will shift the numerical value of a variable by 'a'.
+  [x] ++
+  [x] --
+Specifically to shift value of a variable by 1. 
+
+Naming conventions for variables:
+  camelCase = cartQuantity
+  PascalCase = CartQuantity
+  kebab-case = cart-quantity
+  snake_case = cart_quantity
+
+You can box lines of buttons together in HTML by compouding <button> inside a <p> elements
+  example:
+  <p>
+    <button> a </button>
+    <button> b </button>
+  </p>
+
+Converting string into maths:
+  eval(x); 
+  where x stands for the variable containing the string to be converted into math.
+    example:
+    let calc = '1+1';
+    eval (calc);

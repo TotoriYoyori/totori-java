@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Splendorous Coin-flip Game
+    </title>
+  </head>
+
+  <body>
+    <button onclick="
+    playGame('heads'); 
+    ">
+      Heads
+    </button>
+
+    <button onclick="
+    playGame('tails');
+    ">
+      Tails
+    </button>
+
+
+    <script>
+      const score = JSON.parse(localStorage.getItem('score')) || {
+        wins: 0,
+        losses: 0
+      };
+
+      function playGame(guess) {
+        const coinFlip = (Math.random() <= 0.5) ? 'heads' : 'tails';
+        console.log(`Computer picked ${coinFlip}`);
+
+        if (guess === coinFlip) {
+          score.wins += 1;
+          console.log(`You won! Current Score:
+Wins: ${score.wins}, Losses: ${score.losses}`);
+        } else {
+          score.losses += 1;
+          console.log(`You lost! Current Score:
+Wins: ${score.wins}, Losses: ${score.losses}`);
+        };
+
+        localStorage.setItem('score', JSON.stringify(score));
+      };
+      
+    </script>
+
+  </body>
+</html>

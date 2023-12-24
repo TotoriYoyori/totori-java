@@ -1,0 +1,37 @@
+Function is a way to compartmentalize and reuse block of codes or instructions together. 
+  function [functionName]() {
+    code;
+  } 
+  Example: function function1() {
+    console.log('Hello');
+    console.log(2+2);
+  }
+Function is especially useful to assign the same function to multiple interactions so you only need to fix the function itself to change this across the board.
+  
+The example above only stores a function. To activate it, you have to do something individually as well:
+  functionName ();
+    Trigger the functionName containing the specified block of codes.
+
+You can also add a return-statement to function to make sure that a function gets converted into a specific value at the end of running it. 
+  function [functionName]() {
+    code;
+    return [value];
+  }
+    console.log( functionName() ) will print [value].
+Values can be string, number, calculation, variables, or anything at all that will result in a value.
+Return statement marks the end of a function statement. Any code after the return statement doesn't get run. 
+  function [functionName]() {
+    return [value];
+    code;
+  }
+    code will not get run in this example. 
+
+Parameter is how you can insert differing values into the function for different calculations, similar to real life function f(x) where f is the function and x is the parameter.
+  function functionName(a) {
+    console.log(a + 2);
+  }
+
+  functionName (5);
+    This will call for 5+2 as 5 is substituted for a in the specified parameter. 
+
+Following the code line-by-line to determine the order of how it works is called 'Tracing the code'.

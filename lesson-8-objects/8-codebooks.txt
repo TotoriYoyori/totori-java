@@ -1,0 +1,91 @@
+An object groups multiple values together. Object starts with a variable.
+  const product = {
+    name: 'Socks',
+    price: 1090
+  };
+    On the left is the property, on the right side name is the value of the property. Together they form a property:value pair. You can separate property:value pair with a comma within an object.
+
+To access or edit property:value of an object, use the dot notation and change it like you would a variable.
+  product.name = 'Cotton socks'
+    This will change the name property from 'Socks' to 'Cotton socks'.
+An alternate form of notation for object property is the bracket notation.
+  product['name'] = 'Cotton socks'
+Bracket notation is to group more complex values as a property for objects. Dot notation is use by default for short simple property. 
+
+Objects are used to organize multiple interrelated variables together so you don't have to make over 10 different vars to refer to one specific thing. It also allows you to view multiple values at once. 
+
+Objects can store any values as properties: strings, number, booleans, other variables, and even other objects and functions. 
+  An object within an object is a nested object.
+  Example:
+    const product = {
+      name: 'shirts',
+      ddate: 2,
+      rating: {
+        star: 5,
+        count: 121,
+      },
+    }
+  To access nested object, use multiple dot notations as normal. 
+  Example: console.log(product.rating.star) displays the star values in the nested object.
+
+  A function within an object is defined as its "method". 
+  Example: 
+    const product = {
+      name: 'shirts',
+      ddate: 2,
+      fun: function funMessage() {
+        console.log('fun');
+      },
+    }
+  Accessing the function within an object using dot notation will trigger the function of said object.
+  Example: product.fun() will display the 'fun' message because that is the method of the object's fun property.
+
+Console.log is simply calling the method 'log' of the object 'Console'. Math.random is simply calling the method 'random' of the object 'Math'. Both of the aforementioned objects are built-in objects.
+
+Shortcut for accessing properties inside objects. Instead, of traditionally assigning variable for a property using dot notation, if var name matches property name:
+  const property1 = object.property1;
+You can use destructuring to shorthand the expression:
+  const {property1} = object;
+This can be done to destructure as many properties as you want out of an object and make variables out of them
+  const {prop1, prop2, prop3} = object;
+
+1/ JSON: important built-in object of JScript is JSON. Which is a more universal string format for object properties that can be switched between different programming language.
+  JSON objects = {
+    "name": "shirts",
+    "delivery-time": "1 days",
+    "rating": {
+      "stars": 4.5,
+      "count": 121
+    }
+  }
+To convert JScript > JSON objects format, access a method of JSON using:
+  JSON.stringify(jscriptObject)
+    This output a string of JSON property:values.
+To convert JSON > JScript, access another method:
+  JSON.parse(jsonString)
+    This output an object with normal property:value using informations from JSON string. 
+
+2/ localStorage: store information that will not get removed when refreshing or altering code of an application. 
+localStorage only supports string information, which means objects will require JSON strings stringify.
+  localStorage.setItem('key' , 'value');
+    This stores 'value' under the alias 'key'. You can store values using JSON strings. 
+  localStorage. getitem ('key');
+    Extracts value under alias 'key'
+  localStorage. removeItem ('key');
+    Remove value under alias 'key'
+
+JavaScript has a feature called Auto-Boxing, which means JavaScript automatically converts most non-objects values into objects. Which means strings, numbers, and booleans can have properties as well just as an object would.
+  'hello'.length
+    This indicates the property of how many chars 'hello' has
+  'hello'.toUpperCase
+    This activates the method converting all characters in the string into upper case. 
+Another important feature of JavaScript is that all objects are simply reference, or shortcut values that point toward a location inside the computer memory storing all the actual values underneath. Objects =/= values.
+  Example: const object1 = {
+    message: 'hello'
+  };
+    This creates a variable containing object 'object1', which is just a reference pointer for the property 'message'. 
+  You can then set another variable to copy this object, and it won't reload the whole object. It simply points toward the reference.
+  Example: const object2 = object1;
+  Think of object as a reference ID of the box of values. Which means two objects can have identical values but will be considered two different objects, because they are two different references. 
+  Object 1     =/=       Object 2
+  ABCDE                  ABCDE

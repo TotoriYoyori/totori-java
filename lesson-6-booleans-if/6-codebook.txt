@@ -31,7 +31,7 @@ Logical Operators:
   ||: or
     It checks for at least one boolean value return true in a condition. 
     example: console.log(true||false); will return true because the left side returns true. 
-  ![boolean]: not
+  !boolean: not
     It flips the boolean condition.
     example: console.log(!true); will return false. 
   Logical operators are lower than comparison operators in the order of operations.

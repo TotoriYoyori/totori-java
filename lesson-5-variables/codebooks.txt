@@ -1,13 +1,13 @@
 Variable is a container to assign a category to values and use them later. Values can be both numbers and strings. 
 
 Three ways of creating variables:
-  let [x] = a;
-    Creates a variable with the name 'x'. Values assigned to it can be changed later with reassignments.
+  let variableName = a;
+    Creates a variable with the name 'variableName'. Values assigned to it can be changed later with reassignments.
       example: let cartQuantity = 3;
 
-  const [x] = a;
+  const variableName = a;
     Create a constant variable with the name 'x'. Values assigned to be it cannot changed later with reassignments.  
-    >> Best practice to always start with const [x] becaues it is safer and cannot be changed. 
+    >> Best practice to always start with const variableName becaues it is safer and cannot be changed. 
       example: const cartQuantity = 3;
 
   var [x] = a;

@@ -1,68 +1,153 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>
-      DOM Projects and Crystalline Calculator
-    </title>
+    <title>Better Calculator</title>
+
   </head>
-
   <body>
+    <p class ="js-title">Calculator</p>
+
+    <p class ="js-expression">
+    </p>
+    
     <p>
-      YouTube Subscribe Button
+      <button onclick="
+      updateCalculation(1);
+      ">
+        1
+      </button>
+
+      <button onclick="
+      updateCalculation(2);
+      ">
+        2
+      </button>
+
+      <button onclick="
+      updateCalculation(3);
+      ">
+        3
+      </button>
+
+      <button onclick="
+      updateCalculation(' + ');
+      ">
+        +
+      </button>
+    </p>
+    
+    <p>
+      <button onclick="
+      updateCalculation(4);
+      ">
+        4
+      </button>
+
+      <button onclick="
+      updateCalculation(5);
+      ">
+        5
+      </button>
+
+      <button onclick="
+      updateCalculation(6);
+      ">
+        6
+      </button>
+
+      <button onclick="
+      updateCalculation(' - ');
+      ">
+        -
+      </button>
     </p>
 
-    <button class = "js-subscribe-button" 
-    onclick ="
-      subscribe();
-    ">
-      Subscribe
-    </button>
-
     <p>
-      Amazon Shipping Calculator
+      <button onclick="
+      updateCalculation(7);
+      ">
+        7
+      </button>
+
+      <button onclick="
+      updateCalculation(8);
+      ">
+        8
+      </button>
+
+      <button onclick="
+      updateCalculation(9);
+      ">
+        9
+      </button>
+
+      <button onclick="
+      updateCalculation(' * ');
+      ">
+        *
+      </button>
     </p>
 
-    <input placeholder = "Cost of order" 
-    class ="js-cost-input" 
-    onkeydown="
-      event.key === 'Enter' && calculateTotal()
-    "> 
+    <p>
+      <button onclick="
+      updateCalculation(0);
+      ">
+        0
+      </button>
 
-    <button onclick="
-    calculateTotal();
-    ">
-      Calculate
-    </button>
+      <button onclick="
+      updateCalculation('.');
+      ">
+        .
+      </button>
 
-    <p class ="js-total-cost">
+      <button onclick="
+      evalCalculation();
+      ">
+        =
+      </button>
 
+      <button onclick="
+      updateCalculation(' / ');
+      ">
+        /
+      </button>
+    </p>
+
+    <p>
+      <button onclick="
+      resetCalculation();
+      ">
+        Clear
+      </button>
     </p>
 
     <script>
+      let calculation = localStorage.getItem ('calculation') || '';
+      document.querySelector('.js-expression')
+          .innerHTML = `${calculation}`;
 
-      window.document
-      window.console.log('window');
-
-      function calculateTotal() {
-        const costInputLm = document.querySelector('.js-cost-input');
-
-        const cost = costInputLm.value < 40 ?
-        Number(costInputLm.value) + 10
-        :Number(costInputLm.value);
-
-        document.querySelector('.js-total-cost')
-          .innerHTML = `$${cost}`;
+      function updateCalculation(insertValue) {
+        calculation += insertValue;
+        localStorage.setItem ('calculation', calculation);
+        document.querySelector('.js-expression')
+          .innerHTML = `${calculation}`;
+        console.log(calculation);
       };
 
+      function evalCalculation (){
+        calculation = eval(calculation);
+        document.querySelector('.js-expression')
+          .innerHTML = `${calculation}`;
+        localStorage.setItem ('calculation', calculation);
+        console.log(calculation);
+      };
 
-      function subscribe() {
-        const subButtonLm = document.querySelector('.js-subscribe-button');
-
-        if (subButtonLm.innerText === 'Subscribe'){
-          subButtonLm.innerHTML = 'Subscribed';
-        } else {
-          subButtonLm.innerHTML = 'Subscribe';
-        };
+      function resetCalculation (){
+        calculation = 0
+        localStorage.removeItem ('calculation');
+        document.querySelector('.js-expression')
+          .innerHTML = `${calculation}`;
       };
     </script>
   </body>

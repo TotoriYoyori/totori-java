@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Better Cart Quantity</title>
+    
+  </head>
+  <body>
+    <p>Cart Quantity</p>
+
+    <button onclick="
+    console.log(`Cart Quantity: ${cartQuantity}`);
+    ">
+      Show Quantity
+    </button>
+    
+    <button onclick="
+    updateCartQuantity(1);
+    updateTally();
+    ">
+      Add to Cart
+    </button>
+
+    <button onclick="
+    updateCartQuantity(2);
+    updateTally();
+    ">
+      +2
+    </button>
+
+    <button onclick="
+    updateCartQuantity(3);
+    updateTally();
+    ">
+      +3
+    </button>
+
+    <button onclick="
+    updateCartQuantity(4);
+    updateTally();
+    ">
+      +4
+    </button>
+
+    <button onclick="
+    updateCartQuantity(5);
+    updateTally();
+    ">
+      +5
+    </button>
+
+    <button onclick="
+    updateCartQuantity(-1);
+    updateTally();
+    ">
+      Remove from cart
+    </button>
+
+    <button onclick="
+    updateCartQuantity(-2);
+    updateTally();
+    ">
+      -2
+    </button>
+
+    <button onclick="
+    updateCartQuantity(-3);
+    updateTally();
+    ">
+      -3
+    </button>
+
+    <button onclick="
+    resetCartQuantity();
+    updateTally();
+    ">
+      Reset Cart
+    </button>
+
+    <p class = "js-tally">
+      Cart Quantity: 0
+    </p>
+
+    <script>
+      let cartQuantity = 0;
+
+      function resetCartQuantity() {
+        cartQuantity = 0;
+        console.log('Cart was reset.');
+        console.log(`Cart Quantity: ${cartQuantity}`);
+      };
+
+      function updateCartQuantity (quantity) {
+        if (cartQuantity + quantity > 10) {
+          alert('The cart is full!');
+          return;  
+        } 
+        if (cartQuantity + quantity < 0) {
+          alert('Not enough items in the cart!');
+          return;
+        } 
+
+        cartQuantity += quantity
+        console.log(`Cart Quantity: ${cartQuantity}`)
+      }; 
+
+      function updateTally () {
+        document.querySelector('.js-tally')
+          .innerHTML = `Cart Quantity: ${cartQuantity}`
+      };
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      DOM Exercises
+    </title>
+  </head>
+
+  <body>
+    <button>
+      9a
+    </button>
+
+    <button class ="js-beta">
+      9b
+    </button>
+
+    <button class = "js-choose-heads" 
+    onclick="
+      displayChoice('Heads');
+    ">
+      Heads
+    </button>
+
+    <button class = "js-choose-tails"
+    onclick="
+      displayChoice('Tails');
+    ">
+      Tails
+    </button>
+
+    <p class = "js-ht-result">
+    </p>
+
+    <input placeholder ="Your name"
+    class = "js-input-name"
+    onkeydown = "enterSubmit();"
+    onkeyup = "trackName();">
+
+    <button class = "js-submit"
+    onclick="
+      displayName();
+    ">
+      Submit
+    </button>
+
+    <p class = "js-track-name">
+    </p>
+
+    <p class = "js-name">
+    </p>
+
+
+
+    <script>
+      console.log(document.querySelector('button'));
+
+      document.querySelector('.js-beta')
+        .innerHTML = '9b done!';
+
+      function displayChoice(choice){
+        document.querySelector('.js-ht-result')
+          .innerHTML = `You chose: ${choice}`;
+      };
+
+      function displayName() {
+        const yourName = 
+          document.querySelector('input').value;
+
+        document.querySelector('.js-name')
+          .innerHTML = `Your name is: ${yourName}`;
+      };
+
+      function enterSubmit() {
+        event.key === 'Enter' && displayName();
+      };
+
+      function trackName() {
+        const yourName = 
+          document.querySelector('input').value;
+
+        document.querySelector('.js-track-name')
+          .innerHTML = yourName;
+      }; 
+    </script>
+  </body>
+</html>

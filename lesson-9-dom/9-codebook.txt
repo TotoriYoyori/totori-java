@@ -1,0 +1,64 @@
+One of the most important built-in object in JScript is the document object. The document object acts as a model for the entire webpage, hence D.O.M = Documemt Object Mode.
+  document.body.innerHTML = 'hello'; 
+    Access the innerHTML property within the body property of the document object and change it to 'hello'.
+  document.title = 'Good job!';
+    Access the title property of the document and change it to 'Good Job!';
+D.O.M allows for HTML elements to be maniputalable as objects inside JavaScript. 
+
+Some important properties and methods of documents:
+  document.body
+    Access and modify the entire <body> section of the document, including the <body></body> tags.
+  document.body.innerHTML
+    Access and modify only the HTML sections of the <body> section of the document.
+  document.querySelector('htmlElement')
+    This method returns a specific HTML element. You can compound this with further properties to change it.
+      document.querySelector('htmlElement').innerHTML
+        Access and modify the HTML section of the specified element using querySelector. 
+
+HTML elements can be assigned specific class to increase specificity of targets.
+  <button class = 'js-redButton'> Red Button </button>  
+    This HTML red button has the class 'js-redButton'.
+In naming class for HTML elements, good practice is to start with 'js' to indicate that this class will be manipulated by JavaScript.
+To target classes instead of just element name in querySelector, use the following dot notation:
+  document.querySelector('.js-className')
+
+DOM is important because it allows HTML elements to not only act as interface for JavaScript interactions, but to become object itself, retrievable by JavaScript.
+  const redButtonLm = document.querySelector ('.js-redButton');
+    This creates a variable for the red button HTML element.
+
+You can manually convert a string into a number using:
+  Number('string');
+You can also do the other way (number > string):
+  String(number);
+
+Tips and Tricks when working with DOM:
+Beware of spaces when working with HTML elements. Often time you will space out your HTML texts to make it easier to read, like so:
+  <button>
+    A button.
+  </button>
+    This creates many spaces in this HTML element, which means the innerHTML is more like '        A button'. To only use the inner text of the HTML element. Use...
+      document.querySelector('elementName').innerText
+
+<input> is a new HTML element that allows foreign input from other people, which is visible as a textbox.
+  <input>
+    This is a void element so it does not require a matching closing tag like <p></p>. You can otherwise assign class as well as... 
+  <input placeholder ="A text"> 
+    This creates "A text" in the placeholder input box.
+When retrieving values inside <input>, instead of using innerHTML or innerText, you have to use:
+  document.querySelector('input').value
+    Note that all values inside inputs are implicitly determined by Java to be strings. Which means you might have to String(), Number() accordingly. 
+
+Onkeydown is an event listener that can track all events and issue responses accordingly, that you can assign to <input>. You can use this in combo with event.key to issue response to a specific key.
+  <input onkeydown="
+    event.key === A && moveCharacter()
+  ">
+    This in combo with the Guard operator means that upon the condition of event.key = A holds true, the function moveCharacter() will be triggered.
+  
+Type Coercion: JavaScript will automatically convert a specific string into number and vice versa depending on scenario, operations you are working on. It is good to keep that in mind and track them accordingly to avoid errors.
+
+Window is a built in object that represents the browser. In fact, it is the parent objects for many of the functions and objects we have been using.
+  window.document
+  window.alert();
+  window.console.log
+Window is automatically added to most of these objects and methods however. 
+

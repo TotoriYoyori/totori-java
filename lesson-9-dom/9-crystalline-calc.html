@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      DOM Projects and Crystalline Calculator
+    </title>
+  </head>
+
+  <body>
+    <p>
+      YouTube Subscribe Button
+    </p>
+
+    <button class = "js-subscribe-button" 
+    onclick ="
+      subscribe();
+    ">
+      Subscribe
+    </button>
+
+    <p>
+      Amazon Shipping Calculator
+    </p>
+
+    <input placeholder = "Cost of order" 
+    class ="js-cost-input" 
+    onkeydown="
+      event.key === 'Enter' && calculateTotal()
+    "> 
+
+    <button onclick="
+    calculateTotal();
+    ">
+      Calculate
+    </button>
+
+    <p class ="js-total-cost">
+
+    </p>
+
+    <script>
+
+      window.document
+      window.console.log('window');
+
+      function calculateTotal() {
+        const costInputLm = document.querySelector('.js-cost-input');
+
+        const cost = costInputLm.value < 40 ?
+        Number(costInputLm.value) + 10
+        :Number(costInputLm.value);
+
+        document.querySelector('.js-total-cost')
+          .innerHTML = `$${cost}`;
+      };
+
+
+      function subscribe() {
+        const subButtonLm = document.querySelector('.js-subscribe-button');
+
+        if (subButtonLm.innerText === 'Subscribe'){
+          subButtonLm.innerHTML = 'Subscribed';
+        } else {
+          subButtonLm.innerHTML = 'Subscribe';
+        };
+      };
+    </script>
+  </body>
+</html>

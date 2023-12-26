@@ -74,7 +74,7 @@ function playGame(playerMove) {
   updateScoreLm();
 };
 
-function updateScoreLm() {
+  function updateScoreLm() {
   document.querySelector('.js-score')
     .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`; 
 };

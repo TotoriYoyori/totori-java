@@ -87,6 +87,7 @@
       Subscribe
       </button>
     </p>
+
   <!--This is HTML structure for the Amazon Calculator-->
     <p class = "amazon-calc-title">
       Amazon Shipping Calculator
@@ -123,12 +124,20 @@
       function calculateTotal() {
         const costInputLm = document.querySelector('.js-cost-input');
 
-        const cost = costInputLm.value < 40 ?
-        Number(costInputLm.value) + 10
-        :Number(costInputLm.value);
+        if (costInputLm.value < 0) {
+          return;
+        } else if (costInputLm.value < 40 && costInputLm.value > 0) {
+          const cost = Number(costInputLm.value) + 10;
+          document.querySelector('.js-total-cost')
+          .innerHTML = `$${cost}`
+        } else {
+          const cost = Number(costInputLm.value);
+          document.querySelector('.js-total-cost')
+          .innerHTML = `$${cost}`
+        };
 
         document.querySelector('.js-total-cost')
-          .innerHTML = `$${cost}`;
+          .innerHTML = `Error: cost cannot be below $0`
       };
 
 

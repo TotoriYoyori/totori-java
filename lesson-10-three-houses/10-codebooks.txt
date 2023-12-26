@@ -1,0 +1,53 @@
+To access CSS editors, use the following elements inside the HTML <head> element. 
+  <style>
+    button {
+      background: red;
+      border: none;
+    }
+
+    .element-class {
+      color: red;
+      background-color: none;
+    }
+  <style>
+Inside the <style> element, assign another HTML element as the CSS selector, then curly bracket. Inside the curly bracket, assign a CSS property:value pair, followed by a semi-colon to end instructions
+  You can also assign element class using a dot notation. Before this, when assigning class for CSS manipulations, make two classes: one for JS, and one for CSS. 
+  To find more CSS property:value, use Google.
+
+To flip between different appearances for a single HTML element, you can use:
+  htmlElement.classList.add ('new-class-name');
+    This will add an additional class to the HTML element being targeted. 
+  htmlElement.classList.remove ('new-class-name');
+    This will remove a class of the HTML element being targeted. 
+  Example: document.querySelector('.class1').classList
+After you have a new class for same element, redesign the new class using CSS.  
+
+To insert an image over an HTML element:
+  <button> <img src= "img.png"> </button>
+    By inserting <img> tag in between the element, you don't need a matching closing tag because <img> is a void element. Indicate src means source, which means which file to load.
+Because <img> is an HTML element, you can also assign class and other attributes you would normally to elements.
+  <button> 
+    <img src = "img.png" class = "img-class"> 
+  </button>
+
+It's good practice when it comes to naming convention that img files can be named as something that programmers can use as variables.
+  car.png
+  bike.png
+  motorcycle.png
+    This ways, programmers can use car, bike, motorcycle as the variable vehicle for example. 
+  
+You should split up a file so that each file is its own language, for example:
+  website.html
+  website-script.js
+To load up a script from outside an html file, add a src attribute to the <script> element like you would <img>
+  <script src = "filepath/filename.ext"> </script>
+Through doing this, you can load multiple script in sequences to break up your scripts even more.
+  <script src = "filepath/filename1.ext"> </script>
+  <script src = "filepath/filename2.ext"> </script>
+  <script src = "filepath/filename3.ext"> </script>
+
+To split up CSS files, the procedure is a bit different from JS files and <script>.
+  <head>
+    <link rel = "stylesheet" href = "filepath/filename.css">
+  </head>
+    The link element is a void element so it doesn't require closing tag. It needs a rel attribute, which indicate what kind of file we are looking for, and the href, which indicates the exact file location.

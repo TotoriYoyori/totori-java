@@ -1,0 +1,61 @@
+/*CSS for default body*/
+  body {
+    background-color: rgb(25, 25, 25);
+    font-family: Gotham Light;
+    color: white;
+  }
+/*CSS for Game Title*/
+  .title {
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+  }
+
+/*CSS for Game Button*/
+  .play-button {
+    background-color: transparent; 
+    border: 3px solid white;
+    width: 250px;
+    height: 250px;
+    border-radius: 125px;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+
+  .play-icon {
+    height: 200px;
+  }
+
+  .play-icon-L {
+    height: 200px;
+    position: relative;
+    right: 25px;
+  }
+/*CSS for Game Result*/
+  .result {
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 50px;
+  }
+
+  .moves {
+    margin-top: 30px;
+  }
+
+  .moves-icon {
+    height: 100px;
+  }
+
+  .score {
+    margin-top: 75px;
+  }
+
+/*CSS for Reset*/
+  .reset-button {
+    font-family: Gotham Light;
+    font-size: 25px;
+    background-color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+  }

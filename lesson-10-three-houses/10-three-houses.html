@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      JavaScript, HTML and CSS
+    </title>
+
+    <style>
+    /* The following CSS is for all default text*/
+      body {
+        font-family: Garamond;
+      }
+
+    /* The following CSS is for the YouTube subscribe */
+      .subscribe-title {
+        font-size: 20px;
+        border: 1px solid black;
+        padding: 5px;
+        display: inline;
+      }
+
+      .subscribe-button {
+        font-family: Gotham Light;
+        border: none;
+        background-color: black;
+        color: white;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 50px;
+        cursor: pointer;
+        margin-bottom: 30px;
+      }
+
+      .is-subscribed {
+        background-color: rgb(240, 240, 240);
+        color: black;
+      }
+
+    /* The following CSS is for the Amazon Calculator*/
+      .amazon-calc-title {
+        font-size: 20px;
+        border: 1px solid black;
+        padding: 5px;
+        display: inline;
+      }
+
+      .cost-input {
+        font-family: Gotham Light;
+        padding: 10px;
+      }
+
+      .calc-button {
+        font-family: Gotham Light;
+        color: white;
+        border: none;
+        background-color: green;
+        padding: 12px 15px;
+        cursor: pointer;
+      }
+
+      .total-cost {
+        font-family: Gotham Light;
+        font-size: 50px;
+      }
+    </style>
+  </head>
+
+  <body>
+  <!--This is HTML structure for the YouTube subscribe-->
+    <p class = "subscribe-title">
+      YouTube Subscribe Button
+    </p>
+
+    <p>
+      The following button allows you to subscribe to Totori.
+    </p>
+
+    <p>
+      <button class = 
+        "js-subscribe-button
+        subscribe-button"
+      onclick ="
+        subscribe();
+     ">
+      Subscribe
+      </button>
+    </p>
+
+  <!--This is HTML structure for the Amazon Calculator-->
+    <p class = "amazon-calc-title">
+      Amazon Shipping Calculator
+    </p>
+
+    <p>
+      The following box allows you to calculate your total cost including shipping.
+    </p>
+
+    <p>
+      <input placeholder = "Cost of order" 
+      class =
+        "js-cost-input
+        cost-input" 
+      onkeydown="
+        event.key === 'Enter' && calculateTotal()
+      "> 
+
+      <button class = "calc-button" onclick="
+      calculateTotal();
+      ">
+        Calculate
+      </button>
+    </p>
+
+    <p class ="js-total-cost total-cost">
+
+    </p>
+
+  <!--JavaScript starts here-->
+    <script>
+      window.console.log('window');
+
+      function calculateTotal() {
+        const costInputLm = document.querySelector('.js-cost-input');
+
+        if (costInputLm.value < 0) {
+          return;
+        } else if (costInputLm.value < 40 && costInputLm.value > 0) {
+          const cost = Number(costInputLm.value) + 10;
+          document.querySelector('.js-total-cost')
+          .innerHTML = `$${cost}`
+        } else {
+          const cost = Number(costInputLm.value);
+          document.querySelector('.js-total-cost')
+          .innerHTML = `$${cost}`
+        };
+
+        document.querySelector('.js-total-cost')
+          .innerHTML = `Error: cost cannot be below $0`
+      };
+
+
+      function subscribe() {
+        const subButtonLm = document.querySelector('.js-subscribe-button');
+
+        if (subButtonLm.innerText === 'Subscribe'){
+          subButtonLm.innerHTML = 'Subscribed';
+          subButtonLm.classList.add('is-subscribed'); 
+        } else {
+          subButtonLm.classList.remove('is-subscribed');
+          subButtonLm.innerHTML = 'Subscribe';
+        };
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Exercises for Lesson 10 </title>
+    <link rel ="stylesheet" href = "styles/10-exercises.css">
+  </head>
+
+  <body>
+  <!--HTML: Add to Cart-->
+    <button class ="cart-add">
+      Add to Cart
+    </button>
+
+  <!--HTML: Uber buttons-->
+    <p>
+      <button class = "request-button">
+        Request now
+      </button>
+
+      <button class = "schedule-button">
+        Schedule for later
+      </button>
+    </p>
+
+  <!--HTML: Test buttons-->
+    <p>
+      <button class = "js-test-button">
+        Test
+      </button>
+    </p>
+
+  <!--HTML: Gnashing Fang-->
+    <p>
+      <button class = "gnash-icon">
+        <img src ="../assets/gnash-icon.png" 
+        class = "gnash-png">
+      </button>
+
+      <button class ="claw-icon">
+        <img src ="../assets/claw-icon.png"
+        class = "claw-png">
+      </button>
+
+      <button class ="talon-icon">
+        <img src ="../assets/talon-icon.png"
+        class = "talon-png">
+      </button>
+    </p>
+
+    <p>
+      <button class = 
+        "continuation-button
+        js-gnash-button"
+      onclick = "
+        continuationToggle('gnash');
+      ">
+        Gnashing Fang
+      </button>
+
+      <button class = 
+      "continuation-button
+      js-claw-button"
+    onclick = "
+      continuationToggle('claw');
+      ">
+      Savage Claw
+      </button>
+
+      <button class = 
+      "continuation-button
+      js-talon-button"
+      onclick = "
+      continuationToggle('talon');
+      ">
+      Wicked Talon
+      </button>
+    </p>
+  
+  <!--HTML: Amazon Calculator-->
+    <p class = "amazon-calc-title">
+      Amazon Shipping Calculator
+    </p>
+
+    <p>
+      The following box allows you to calculate your total cost including shipping.
+    </p>
+
+    <p>
+      <input placeholder = "Cost of order" 
+      class =
+        "js-cost-input
+        cost-input" 
+      onkeydown="
+        event.key === 'Enter' && calculateTotal()
+      "> 
+
+      <button class = "calc-button" onclick="
+      calculateTotal();
+      ">
+        Calculate
+      </button>
+    </p>
+
+    <p class ="js-total-cost total-cost">
+
+    </p>
+
+    <button class = "js-igor-button igor-button" onclick ="
+      igorBecomesJakob();
+    ">
+      Igor Sogorovecs
+    </button>
+
+  <!--JavaScript starts here-->
+    <script src ="script/10-exercises.js"> </script>
+
+  </body>
+</html>

@@ -1,0 +1,139 @@
+/* CSS: Add to Cart */
+.cart-add {
+  font-family: Bitter;
+  font-size: 20px;
+  padding: 10px 60px;
+  background-color: rgb(255,216,20);
+  color: black;
+  border: none;
+  border-radius: 50px;
+}
+
+/* CSS: Uber buttons */
+.request-button {
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 7px;
+  padding: 12px 20px;
+  margin-right: 25px;
+}
+
+.schedule-button {
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
+  background-color: rgb(230,230,230);
+  border: none;
+  border-radius: 7px;
+  padding: 12px 20px;
+}
+
+/* CSS: Continuation Icon */
+.gnash-icon {
+  border: none;
+  background-color: transparent;
+  border-radius: 50%;
+  margin-right: 107px;
+  position: relative;
+  left: 30px;
+}
+
+.gnash-png {
+  border-radius: 10px;
+}
+
+.claw-icon {
+  border: none;
+  background-color: transparent;
+  border-radius: 50%;
+  margin-right: 70px;
+}
+
+.claw-png {
+  border-radius: 10px;
+}
+
+.talon-icon {
+  border: none;
+  background-color: transparent;
+  border-radius: 50%;
+  margin-right: 100px;
+}
+
+.talon-png {
+  border-radius: 10px;
+}
+
+/* CSS: Continuation Button */
+.continuation-button {
+  font-family: Gotham;
+  font-size: 15px;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 7px;
+  padding: 12px 20px;
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+.cont-ready {
+  font-family: Gotham;
+  font-size: 15px;
+  color: black;
+  background-color: rgb(230,230,230);
+  border: none;
+  border-radius: 7px;
+  padding: 12px 20px;
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+/* CSS: Amazon Calculator */
+.amazon-calc-title {
+  font-size: 20px;
+  border: 1px solid black;
+  padding: 5px;
+  display: inline;
+}
+
+.cost-input {
+  font-family: Gotham Light;
+  padding: 10px;
+}
+
+.calc-button {
+  font-family: Bitter;
+  font-size: 15px;
+  color: white;
+  border: none;
+  background-color: green;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.total-cost {
+  font-family: Gotham Light;
+  font-size: 50px;
+}
+
+.error-cost {
+  font-family: Gotham Light;
+  font-size: 50px;
+  color: red;
+}
+
+.igor-button {
+  background-color: orange;
+  font-size: 25px;
+  font-family: Garamond;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  cursor:pointer;
+}

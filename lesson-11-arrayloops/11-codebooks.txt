@@ -73,5 +73,10 @@ See arrays-n-loops.html for <div> container. Most important distinction it and <
 
 See arrays-n-loops.html for 'Generating HTML' technique. it is used in conjunction with L2A to generate updating array values on the webpage. 
 
+<div> container is useful for organizing grids using the CSS property grid-template-column
 
+Arrays are references, just like objects.
+  const myArray = [1,2,3];
+    myArray is a reference to [1,2,3] somewhere in the computer library. 
+  const
 

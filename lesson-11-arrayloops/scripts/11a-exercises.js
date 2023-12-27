@@ -1,6 +1,8 @@
 const nums = [10,20,30,40,50];
 const yums = [1,2,3,4,5];
-const names = ['totori', 'cillian', 'swift', 'yeatle'];
+const non = [];
+const onenum = [3];
+const names = ['totori', 'totori', 'cillian', 'swift', 'yeatle'];
 
 //11A
 nums[nums.length - 1] = 99;
@@ -116,3 +118,50 @@ function countPositive(array) {
 };
 
 console.log ( countPositive(yums) );
+
+//11L + M 
+function minMax(array) {
+  if (array.length === 0) {
+    return { min: null, max: null };
+  }
+
+  let result = {
+    min: array[0],
+    max: array[0]
+  };
+
+  if (array.length === 1) {
+    return result;
+  }
+
+  for (let i = 1; i < array.length; i++) {
+    const value = array[i];
+
+    if (value < result.min) {
+      result.min = value;
+    };
+
+    if (value > result.max) {
+      result.max = value;
+    };
+  }
+  return result;
+}
+
+console.log (minMax(non));
+
+//11N 
+function countNames(array) {
+  let nameTally = {};
+  for (let i = 0; i < array.length; i++) {
+    const name = array[i];
+    nameTally[`${name}`] = 1;
+
+    if (array[1] === name) {
+      nameTally[`${name}`] ++;
+    };
+  };
+  return nameTally;
+};
+
+console.log ( countNames(names) );

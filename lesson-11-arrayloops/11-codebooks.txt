@@ -1,0 +1,77 @@
+Array is another type of value in JavaScript and it represents a list of other things.
+  const myArray = [10, 20, 30];
+    Assign a square bracket around a list of values, and assign a variable to the array, now you can summon the array using the variables.
+To retrieve a value from an array, call its index number. 
+  myArray = [0];
+    Where 0 is the index number of myArray, which is the very first value. This will return the value 10.
+  In a 0-indexed-array, 0 is always the first array value.
+
+Array itself is also a value. It is actually an object, but a specific type of object. This means arrays also have properties and methods that can be used. 
+  .length property:
+    myArray.length
+      Return the number of values in the array.
+  'Push' method: 
+    myArray.push(newValue);
+      This will push an additional value at the end of the array sequence. 
+  'Splice' method:
+    myArray.splice(startIndex, numberOfValueToRemove);
+
+When creating variables to host HTML elements using querySelector, it is good practice to create a variable for the element itself, and a variable for the element's content.
+This separation makes sure you can control element separately from contents. 
+
+Loop is a special type of statement. Llike the If-Statement that runs a code under branching conditions, a loop statement runs a code endlessly under a certain condition.
+  1. While-Loops: a more technical writing of a loop
+    let loopVariable = a;
+    while (loop condition) {
+      loopBody();
+      increment step;
+    };
+
+    Example:
+    let number = 1;
+    while (number < 5) {
+      console.log(number);
+      number ++;
+    };
+  While-Loops is for non-standard loops that doesn't have increment steps, or increment steps that are not linear. 
+
+  2. For-Loops: a more short-handed writing of a loop, but otherwise works exactly the same as a while-loop.
+    for (loopVariable; loop condition; increment step){
+      loopBody();
+    }
+
+    Example:
+    for (let number=1; number < 5; number ++) {
+      console.log(number);
+    }
+      This code works the same as the while-loop.
+  The For-Loops is the recommended choice for any standard loop (always containing a variable, a condition, and a linear increment step to the variable). It is also used mostly for 'Looping through an Array'.
+
+Each time you run a loop once, it is called an iteration. In the example above, there were a total of 5 iterations for the while-loop. Similar to function, loop also has a scope for all its contained variables. 
+
+A technique looping is used in conjunction with array is called 'Looping through an Array' (L2A)
+  for (let i = 0; i < myArray.length; i++) {
+    const value = myArray [i];
+    console.log(value);
+  };
+    Similar to array in Calculus, the standard for naming index in the array is 'i'. 
+
+    This 'looping through an array' code will run each index number of the loop as variable until it reaches the end of the array.
+
+A useful derivative of L2A (looping through an array) is the accumulator pattern where an L2A results in a final output. 
+  const myArray = [1,1,3];
+  const total = 0;
+    The total variable here is an accumulator variable that will store all increments of sum in the loop.
+
+  for (let i = 0; i < myArray.length; i++) {
+    const value = myArray [i];
+    total += value;
+  };
+An accumulator variable can be anything. 
+
+See arrays-n-loops.html for <div> container. Most important distinction it and <p> is that it doesn't have default styling. 
+
+See arrays-n-loops.html for 'Generating HTML' technique. it is used in conjunction with L2A to generate updating array values on the webpage. 
+
+
+

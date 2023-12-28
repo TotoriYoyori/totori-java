@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      To-Do List
+    </title>
+
+    <link rel = "stylesheet" href = "styles/11c-exercises.css">
+  </head>
+
+  <!--Todo List-->
+  <body>
+    <p> 
+      To-do List (v2.0)
+    </p>
+
+    <div class = "todo-input-grid">
+      <input placeholder = "What to do?"
+        class = "js-todo-input todo-input">
+
+      <input type= "date" class ="js-due-date-input due-date-input">
+        
+      <button class = "add-todo-button" onclick ="
+        addTodo();
+      ">
+        Add
+      </button>
+    </div>
+
+    <div class = "js-todo-list todo-grid"> <!--the <div> element is a container, like the caard page. Which means it is a space where you can contain other HTML elements, like <p> or <button>. It is also a block element, which means it takes up an entire line by itself -->
+      
+    </div>
+
+  <!--JavaScript starts here-->
+    <script src ="scripts/11c-exercises.js">
+    </script>
+  </body>
+</html>

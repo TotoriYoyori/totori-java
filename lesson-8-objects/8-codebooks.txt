@@ -1,4 +1,6 @@
-An object groups multiple values together. Object starts with a variable.
+An object is a container of multiple values together. It always starts with a curly bracket.
+  {object}
+  
   const product = {
     name: 'Socks',
     price: 1090

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Splendorous To-Do List
+    </title>
+
+    <link rel = "stylesheet" href = "styles/12-splendorous-todo.css">
+  </head>
+
+  <body>
+    <p> 
+      To-do List (v2.0)
+    </p>
+
+    <div class = "todo-input-grid">
+      <input placeholder = "What to do?"
+        class = "js-todo2-input todo2-input">
+
+      <input type= "date" class ="js-due-date-input due-date-input">
+        
+      <button class = "add-todo-button" onclick ="
+        addTodo2();
+      ">
+        Add
+      </button>
+    </div>
+
+    <div class = "js-todo-list todo-grid"> <!--the <div> element is a container, like the caard page. Which means it is a space where you can contain other HTML elements, like <p> or <button>. It is also a block element, which means it takes up an entire line by itself -->
+    </div>
+
+  <!--JavaScript starts here-->
+    <script src ="scripts/12-splendorous-todo.js">
+    </script>
+  </body>
+</html>

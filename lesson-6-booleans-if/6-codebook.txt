@@ -77,11 +77,11 @@ Truthy and Falsy values
 
 Shortcuts for Booleans and If-Statements
   Ternary Operators: ?: 
-    A shortcut for If-Else statements that can be used in a compact manner as a variable.
+    A shortcut for If-Else statements that can be used in a compact manner when you want to assign values inside a variable.
     Example: const result = true ? 'truthy' : 'falsy';
       Variable runs left or right value depending on boolean condition stated. 
   Guard Operator: &&
-    A shortcut for If statements and AND logical operator to short circuit an evaluation in case where conditions are immediately falsy before running the full sequence. Think of this as: if values on left false, then value on the right doesn't register. 
+    A shortcut for If statements and AND logical operator to short circuit an evaluation in case where conditions are immediately falsy before running the full sequence. Think of this as: if values on left false, then value on the right doesn't register. This is useful to substitute an if-statement with only one If line. 
     Example: const message = false && 'hello'
       Since the value on the left is immediately false, there is no need to check to ensure this 'and' logical operator is satisfactory on the right side. 
     Example: const message = 5 && 'hello'

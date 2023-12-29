@@ -69,7 +69,7 @@
     */ 
 
     const nums = [1,1,3];
-    let total = 0; //This variable stores accumulation, and is used with L2A to solve accumulation patterns. An accumulator variable simply store output results from an L2A, and it can be anything.
+    let total = 0; //This variable stores accumulation, and is used with L2A to solve accumulation patterns. An accumulator variable simply store output results from an L2A, and it can be anything (arrays, booleans, objects)
 
     for (let i = 0; i < nums.length; i++ ) {
       const value = nums[i];
@@ -85,16 +85,15 @@
     };
     console.log(numsDoubled);
 
-      const array1 = [1,2,3]
-      const array2 = array1.slice(); // .slice is a method to copy all values within an array. 
+    const array1 = [1,2,3]
+    const array2 = array1.slice(); // .slice is a method to copy all values within an array. 
 
-      array2.push(4);
-      console.log(array1);
+    array2.push(4);
+    console.log(array1);
 
-      const [firstValue, secondValue] = [1,2,3]; //This destructuring is very similar to object destructuring.
+    const [firstValue, secondValue, third] = [1,2,3]; //This destructuring is very similar to object destructuring. The order of the variables match the orders in the index of the array. (firstvalue = 1, third = 3)
 
       for (let i = 1; i <= 10; i++ ) {
-
         if (i % 3 === 0) /* % is a remainder operator that checks for if a number is divisible by a number. */{
           continue; // This skips a specific iteration. 
         };
@@ -131,7 +130,6 @@
 
     console.log ( doubleArray([1,1,3]) );
     console.log ( doubleArray([2,2,5,0,5]) );
-
     </script>
   </body>
 </html>

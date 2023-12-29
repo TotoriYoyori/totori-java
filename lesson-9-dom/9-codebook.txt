@@ -11,7 +11,7 @@ Some important properties and methods of documents:
   document.body.innerHTML
     Access and modify only the HTML sections of the <body> section of the document.
   document.querySelector('htmlElement')
-    This method returns a specific HTML element. You can compound this with further properties to change it.
+    This method returns the first instance of a specific HTML element. You can compound this with further properties to change it.
       document.querySelector('htmlElement').innerHTML
         Access and modify the HTML section of the specified element using querySelector. 
 

@@ -35,12 +35,10 @@ document.querySelector('.js-reset-score-button')
 
 // Set a variable isAutoPlaying indicating whether we are Auto Playing. Default is we are not Auto-Playing. We put this outside of the function because it will run back and forth inside the function. 
 let isAutoPlaying;
-// When setting up intervals, they actually result in an interval ID to mark which interval this is. (e.g setInterval() >> Interval 1)
-let intervalID;
+let intervalID; // When setting up intervals, they actually result in an interval ID to mark which interval this is. (e.g setInterval() >> Interval 1)
 
 function autoPlay() {
-  // If we are not Auto-Playing (!isAutoPlaying), then we turn on setInterval and switch isAutoPlaying to true.
-  if (!isAutoPlaying) {
+  if (!isAutoPlaying) {  // If we are not Auto-Playing (!isAutoPlaying), then we turn on setInterval and switch isAutoPlaying to true.
     intervalID = setInterval( () => {
         const playerMove = pickComputerMove();
         playGame(playerMove);

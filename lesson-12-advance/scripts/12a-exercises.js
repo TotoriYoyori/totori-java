@@ -1,17 +1,17 @@
-//12A:
+//12A: Creating a function using anonymous function and variable. 
 const add = function (){
   console.log(2+3);
 };
 
-//12B:
-function runTwice(func) {
-  func();
-  func();
+//12B: Creating a function that calls back a function two times. 
+function runTwice(callback) {
+  callback();
+  callback();
 ;}
 
 runTwice(add);
 
-//12C + D
+//12C + D: Creating a function that changes the text on a button from 'Finishing' to 'Finished' after 1 seconds. In between the duration, the text says 'Loading'.
 document.querySelector('.js-finish-button')
   .addEventListener('click', () => {
     delayToggle();  
@@ -29,7 +29,7 @@ function delayToggle() {
     .innerHTML = 'Loading...';
 };
 
-//12E + F
+//12E + F: Creating a message that pops up 'Added' every time you hit the Add button, which will last for 2s then disappearing. This button should also refresh itself everytime you hit it multiple times. 
 let timeoutID;
 
 document.querySelector('.js-add-button')
@@ -41,7 +41,7 @@ function addedConfirm() {
   const confirmMsgLm = document.querySelector('.js-confirm-message');
   
   confirmMsgLm.innerHTML = 'Added';
-  clearTimeout(timeoutID);
+  clearTimeout(timeoutID); //Clear any existing timeout before running a new one. This effectively "refreshes" the duration everytime you click the button.
 
   timeoutID = setTimeout( () => {
       confirmMsgLm.innerHTML = '';
@@ -49,13 +49,11 @@ function addedConfirm() {
   );
 };
 
-//12G
-/* 
+//12G: When the message count is above 0, it will constantly increases by itself, until it reaches 0 again. 
 let notification = 0;
 if (notification === 0){
   document.title = 'App'
   };
-let intervalID;
 
 function modifyNotification (amount){
   if (notification + amount < 0) {
@@ -65,9 +63,8 @@ function modifyNotification (amount){
     document.title = `(${notification}) New Messages`
 
     // Start the interval when notification increases above 0 and there hasn't been an interval already.
-    if (notification > 0 &&!intervalID) {
-      intervalID = setInterval(
-        function() {
+    if (notification > 0 && !intervalID) {
+      intervalID = setInterval( () => {
           notification ++
           document.title = `(${notification}) New Messages`
         },
@@ -83,9 +80,9 @@ function modifyNotification (amount){
     };
   };
 };
-*/ 
 
-//12G2
+
+//12H: Creating two buttons: A send and a remove button, each increases the number of messages you have. Then, if your messages count is at least, then the tab message will constantly flash between 'App' and the number of messages you currently have. If you have 0 messages, then the tab title stays at App. 
 document.querySelector('.js-send-button')
   .addEventListener('click', () => {
     modifyMessage(1);

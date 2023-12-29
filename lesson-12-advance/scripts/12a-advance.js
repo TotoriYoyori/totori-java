@@ -38,19 +38,17 @@ function display(param) {
 };
 display(2);
 
-//(4) You can also insert a function into another function A. This means that this function A specializes in running other functions. 
+//(4) You can also insert a function into another function A. This means that this function A calls back another function to run. (Callbacks)
 
   //(4.1) The function 'run' takes a function, and run it. 
   function run(func) {
     func();
   };
 
-  //(4.2) We then call run() with another function inside. This is called 'Passing a function into another'. 
+  //(4.2) We then call run() with another function inside. This is called 'Passing a function into another function', or callbacks.  
   run(function(){
     console.log('Hello4')
   });
-
-  //(4.3) The function nested within another function is called a 'Callback'. 
 
 //(5) setTimeout is a built-in function that allows you to run a function in the future. It takes two parameters: a function, and a duration in ms (1000ms = 1s)
   setTimeout(
@@ -81,9 +79,9 @@ const chores = [
   'Wash dishes',
   'Watch YouTube',
 ];
-  //(7.1) The .forEach method parses each value in an array and return them as a parameter within a nested function. This is actually the preferred method of L2A. forEach can also return the index of each array value into the second parameter.
+  //(7.1) The .forEach method parses each value in an array and return them as a parameter for a callback. This is actually the preferred method of L2A. forEach can also return the index of each array value into the second parameter.
     //.forEach(function (arrayValue, arrayIndex))
-  chores.forEach (function(value, index) {
+  chores.forEach ( (value,index) => {
     if (value === 'Wash dishes') {
       return; // This return works the same way as continue in a traditional for-loops. It simply ends the function early for the specific iteration. 
     }

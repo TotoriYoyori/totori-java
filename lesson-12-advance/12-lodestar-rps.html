@@ -22,22 +22,19 @@
 
     <p class="js-result result"></p>
     <p class="js-moves"></p>
-    <p class="js-score score"></p>S
+    <p class="js-score score"></p>
 
   <!--Reset and Auto-Play-->
-    <button onclick="
-      score.wins = 0;
-      score.losses = 0;
-      score.ties = 0;
-      localStorage.removeItem('score');
-      updateScoreElement();
-    " class="reset-score-button">Reset Score</button>
+    <button class="js-reset-score-button reset-score-button">
+      Reset Score
+    </button>
 
-    <button class ="auto-play-button" onclick ="
-      autoPlay();
-    ">
+    <button class ="js-auto-play-button auto-play-button">
       Auto Play
     </button>
+
+    <p class = "js-confirm-reset">
+    </p>
 
   <!--JavaScript begins here-->
     <script src="scripts/12-lodestar-rps.js"></script>

@@ -12,10 +12,13 @@ function runTwice(func) {
 runTwice(add);
 
 //12C + D
+document.querySelector('.js-finish-button')
+  .addEventListener('click', () => {
+    delayToggle();  
+  } );
 
 function delayToggle() {
-  setTimeout( 
-    function() {
+  setTimeout( () => {
       document.querySelector('.js-finish-button')
         .innerHTML = 'Finished';
     },
@@ -29,14 +32,18 @@ function delayToggle() {
 //12E + F
 let timeoutID;
 
+document.querySelector('.js-add-button')
+  .addEventListener('click', () => {
+    addedConfirm();
+  } );
+
 function addedConfirm() {
   const confirmMsgLm = document.querySelector('.js-confirm-message');
   
   confirmMsgLm.innerHTML = 'Added';
   clearTimeout(timeoutID);
 
-  timeoutID = setTimeout(
-    function(){
+  timeoutID = setTimeout( () => {
       confirmMsgLm.innerHTML = '';
     }, 2000
   );
@@ -79,17 +86,29 @@ function modifyNotification (amount){
 */ 
 
 //12G2
+document.querySelector('.js-send-button')
+  .addEventListener('click', () => {
+    modifyMessage(1);
+    checkMode();  
+  } );
+
+document.querySelector('.js-remove-button')
+  .addEventListener( 'click', () => {
+    modifyMessage(-1);
+    checkMode();
+  } );
+  
 let message = 0;
 let intervalID;
 let isDisplaying;
 
-function checkMode(){
-  if (message === 0){
-    stopNotification();
-  } else {
-    displayNotification();
-  };
-};
+const modifyMessage = amount => message + amount < 0?
+  message
+  :(message += amount);
+  
+const checkMode = () => message === 0?
+  stopNotification()
+  : displayNotification();
 
 function displayNotification(){
   if (isDisplaying){
@@ -97,8 +116,7 @@ function displayNotification(){
   ;}
   
   isDisplaying = true;
-  intervalID = setInterval(
-    function(){
+  intervalID = setInterval( () => {
       if (document.title === 'App') {
         document.title = `(${message}) New messages`
       } else {
@@ -115,13 +133,4 @@ function stopNotification (){
   document.title = 'App'
 };
 
-function modifyMessage(amount) {
-  if (message + amount < 0) {
-    return;
-  } else {
-    message += amount;
-    document.title = `(${message}) New Messages`
-    console.log(message);
-  };
-};
 

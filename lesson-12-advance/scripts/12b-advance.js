@@ -99,7 +99,7 @@ console.log ( [1,1,3].map( (value,index) => {
   return value + 10;
 } ) );
   //(14.1) Remember the shortcuts for arrow function if you only have one param and one line of return. 
-  console.log ( [1,-3,-5].filter(value => value > 0) );
+  console.log ( [1,3,-5].filter(value => value > 1 && value < 5) );
   console.log ( [1,1,3].map(value => value + 10) );
 
 //(15) Lastly, a feature of function is called 'Closure'. Which means after a function is resolved, all variables involved in the function scope is deleted. All declaration of that variable outside the function will not work. In other words, as long as the variable is enclosed within a function, the function will always have access to it. 

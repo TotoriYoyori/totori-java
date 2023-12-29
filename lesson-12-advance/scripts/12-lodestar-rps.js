@@ -1,20 +1,37 @@
+// Upon load, retrieve scores from local storage or use default value. 
 let score = JSON.parse(localStorage.getItem('score')) || {
   wins: 0,
   losses: 0,
   ties: 0
 };
 
+// Then update scores element accordingly to current score. 
+function updateScoreElement() {
+  document.querySelector('.js-score')
+    .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+};
+
 updateScoreElement();
 
-/*
-if (!score) {
-  score = {
-    wins: 0,
-    losses: 0,
-    ties: 0
-  };
-}
-*/
+// Event listeners for Reset Score and Auto-Play buttons, by KB and Mouse. 
+document.body
+  .addEventListener('keydown', event => {
+    if (event.key === 'a') {
+      autoPlay();
+    } else if (event.key === 'Backspace') {
+      confirmResetScore();
+    };
+  } );
+
+document.querySelector('.js-auto-play-button')
+  .addEventListener('click', () => {
+    autoPlay();
+  } );
+
+document.querySelector('.js-reset-score-button')
+  .addEventListener('click', () => {
+    confirmResetScore();
+  } );
 
 // Set a variable isAutoPlaying indicating whether we are Auto Playing. Default is we are not Auto-Playing. We put this outside of the function because it will run back and forth inside the function. 
 let isAutoPlaying;
@@ -31,12 +48,45 @@ function autoPlay() {
       1000
     );
     isAutoPlaying = true;
+    document.querySelector('.js-auto-play-button')
+      .innerHTML = 'Stop playing';
   //Else, we stop the interval ID specified as the interval responsible for autoplay. And also turn isAutoPlaying to false. 
   } else {
     clearInterval(intervalID); //clearInterval is a built in function that takes interval ID to stop it. 
     isAutoPlaying = false;
+    document.querySelector('.js-auto-play-button')
+      .innerHTML = 'Auto Play';
   };
 };
+
+// Confirm Reset and Reset Functions
+function confirmResetScore() {
+  const confirmResetLm = document.querySelector('.js-confirm-reset');
+  confirmResetLm.innerHTML = `
+      Are you sure you want to reset the score?
+      <button class = "js-confirm"> Yes </button>
+      <button class = "js-deny"> No </button>
+    `
+  document.querySelector('.js-confirm')
+    .addEventListener('click', () => {
+      resetScore();
+      confirmResetLm.innerHTML = '';
+    } );
+
+  document.querySelector('.js-deny')
+    .addEventListener('click', () => {
+      confirmResetLm.innerHTML = '';
+    } );
+};
+
+function resetScore() {
+  score.wins = 0;
+  score.losses = 0;
+  score.ties = 0;
+  localStorage.removeItem('score');
+  updateScoreElement();
+};
+
 
 document.querySelector('.js-rock-button')
   .addEventListener('click', () => {
@@ -116,10 +166,6 @@ function playGame(playerMove) {
 Computer`;
 }
 
-function updateScoreElement() {
-  document.querySelector('.js-score')
-    .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
-};
 
 function pickComputerMove() {
   const randomNumber = Math.random();

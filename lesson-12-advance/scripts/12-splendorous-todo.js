@@ -11,19 +11,14 @@ renderTodoList();
 function renderTodoList() {
   let todoListHTML = '';
 
-// This is an alternate way to write the traditiona for-loops when it comes to L2A. 
-  todoList.forEach(
-    // Taking the array todoList, each value is returned as two parameters: each array value, and the index number. They are then used to run whatever functions you require.
-    function (todoObject,index) {
-      const {name, dueDate} = todoObject;
+// This is an alternate way to write the traditional for-loops when it comes to L2A. Taking the array todoList, each value is returned as two parameters: each array value, and the index number. They are then used to run whatever functions you require.
+  todoList.forEach( (todoObject,index) => {
+    const {name, dueDate} = todoObject;
 
     const html = `
       <div>${name}</div>
       <div>${dueDate}</div>
-        <button class = "delete-todo-button" onclick ="
-          todoList.splice(${index}, 1);
-          renderTodoList();
-        "> Delete </button>
+        <button class = "js-delete-todo-button delete-todo-button"> Delete </button>
     `;
     todoListHTML += html;
     }
@@ -31,7 +26,23 @@ function renderTodoList() {
 
   document.querySelector('.js-todo-list')
     .innerHTML = todoListHTML;
+
+  // Adding an event listener to each delete buttons: 
+   // We use .querySelectorAll here because there will be multiple instances of the class .js-delete-todo-button and we want to be able to select all of them. The normal querySelector only picks the first instance of the class.
+   // .querySelectorAll returns an array, so forEach is used.
+  document.querySelectorAll('.js-delete-todo-button')
+    .forEach( (deleteButton, index) => {
+      deleteButton.addEventListener('click',() => {
+        todoList.splice(index, 1);
+        renderTodoList();
+      } );
+    } );
 };
+
+document.querySelector('.js-add-todo-button')
+  .addEventListener('click', () => {
+    addTodo2();
+  } );
 
 function addTodo2() {
   const todo2Lm = document.querySelector('.js-todo2-input');
